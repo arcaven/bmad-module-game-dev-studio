@@ -1,15 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "bmad-creative-intelligence-suite",
+  "name": "bmad-game-dev-studio",
   "version": "0.1.0",
-  "description": "A BMad MEthod Core Module that offers a suite of very creative agents and workflows",
+  "description": "A BMad MEthod Core Module that offers a substantial stand alone module for Game Development across multiple supported platforms",
   "keywords": [
     "bmad",
-    "creative"
+    "game-dev"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite.git"
+    "url": "git+https://github.com/bmad-code-org/bmad-module-game-dev-studio.git"
   },
   "license": "MIT",
   "author": "Brian (BMad) Madison",
