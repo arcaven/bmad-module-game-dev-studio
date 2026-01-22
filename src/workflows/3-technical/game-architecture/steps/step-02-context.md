@@ -3,7 +3,7 @@ name: 'step-02-context'
 description: 'Load and understand project context from GDD and supporting documents'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/3-technical/game-architecture'
+workflow_path: '{project-root}/_bmad/gds/workflows/3-technical/game-architecture'
 
 # File References
 thisStepFile: './step-02-context.md'

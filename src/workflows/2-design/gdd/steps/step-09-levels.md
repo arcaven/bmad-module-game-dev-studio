@@ -3,7 +3,7 @@ name: 'step-09-levels'
 description: 'Define level design framework and level progression'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/gdd'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/gdd'
 
 # File References
 thisStepFile: './step-09-levels.md'

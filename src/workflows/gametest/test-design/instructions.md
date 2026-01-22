@@ -2,7 +2,7 @@
 
 # Game Test Design
 
-**Workflow ID**: `_bmad/bmgd/gametest/test-design`
+**Workflow ID**: `_bmad/gds/gametest/test-design`
 **Version**: 1.0 (BMad v6)
 
 ---

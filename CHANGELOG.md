@@ -3,6 +3,7 @@
 ## v6.0.2 - Jan 22, 2026
 
 * Workflow init replaced with new help system
+* Changing all references of BMGD to GDS
 
 ## v6.0.1 - Jan 21, 2026
 

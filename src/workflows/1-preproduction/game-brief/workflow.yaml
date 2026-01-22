@@ -4,7 +4,7 @@ description: "Interactive game brief creation workflow that guides users through
 author: "BMad"
 
 # Critical variables from config
-config_source: "{project-root}/_bmad/bmgd/config.yaml"
+config_source: "{project-root}/_bmad/gds/config.yaml"
 output_folder: "{config_source}:output_folder"
 user_name: "{config_source}:user_name"
 communication_language: "{config_source}:communication_language"
@@ -13,7 +13,7 @@ game_dev_experience: "{config_source}:game_dev_experience"
 date: system-generated
 
 # Workflow components - Step-file architecture
-installed_path: "{project-root}/_bmad/bmgd/workflows/1-preproduction/game-brief"
+installed_path: "{project-root}/_bmad/gds/workflows/1-preproduction/game-brief"
 instructions: "{installed_path}/workflow.md"
 template: "{installed_path}/templates/game-brief-template.md"
 validation: "{installed_path}/checklist.md"
@@ -47,21 +47,21 @@ web_bundle:
   name: "game-brief"
   description: "Interactive game brief creation workflow that guides users through defining their game vision with multiple input sources and conversational collaboration"
   author: "BMad"
-  instructions: "_bmad/bmgd/workflows/1-preproduction/game-brief/workflow.md"
+  instructions: "_bmad/gds/workflows/1-preproduction/game-brief/workflow.md"
   web_bundle_files:
     # Main workflow file
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/workflow.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/workflow.md"
     # Step files
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-01-init.md"
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-01b-continue.md"
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-02-vision.md"
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-03-market.md"
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-04-fundamentals.md"
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-05-scope.md"
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-06-references.md"
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-07-content.md"
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/steps/step-08-complete.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-01-init.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-01b-continue.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-02-vision.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-03-market.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-04-fundamentals.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-05-scope.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-06-references.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-07-content.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/steps/step-08-complete.md"
     # Template
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/templates/game-brief-template.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/templates/game-brief-template.md"
     # Validation checklist
-    - "_bmad/bmgd/workflows/1-preproduction/game-brief/checklist.md"
+    - "_bmad/gds/workflows/1-preproduction/game-brief/checklist.md"

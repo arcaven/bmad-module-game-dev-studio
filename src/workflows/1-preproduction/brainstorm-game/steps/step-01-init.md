@@ -3,7 +3,7 @@ name: 'step-01-init'
 description: 'Initialize the game brainstorming workflow and validate readiness'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/1-preproduction/brainstorm-game'
+workflow_path: '{project-root}/_bmad/gds/workflows/1-preproduction/brainstorm-game'
 
 # File References
 thisStepFile: './step-01-init.md'
@@ -59,7 +59,7 @@ Validate workflow readiness, check for workflow status tracking, and prepare for
 
 **Search for workflow status file:**
 
-Check if `{output_folder}/bmgd-workflow-status.yaml` exists.
+Check if `{output_folder}/gds-workflow-status.yaml` exists.
 
 **If status file NOT found:**
 

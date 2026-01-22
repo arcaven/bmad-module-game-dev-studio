@@ -3,7 +3,7 @@ name: 'step-06-dialogue'
 description: 'Define dialogue style, key conversations, and branching systems'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-06-dialogue.md'

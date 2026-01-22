@@ -3,7 +3,7 @@ name: 'step-04-complete'
 description: 'Complete the brainstorming session with summary and next steps'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/1-preproduction/brainstorm-game'
+workflow_path: '{project-root}/_bmad/gds/workflows/1-preproduction/brainstorm-game'
 
 # File References
 thisStepFile: './step-04-complete.md'
@@ -11,8 +11,8 @@ workflowFile: '{workflow_path}/workflow.md'
 outputFile: '{output_folder}/brainstorming-session-{date}.md'
 
 # Handoff References
-gameBriefWorkflow: '{project-root}/_bmad/bmgd/workflows/1-preproduction/game-brief/workflow.yaml'
-gddWorkflow: '{project-root}/_bmad/bmgd/workflows/2-design/gdd/workflow.yaml'
+gameBriefWorkflow: '{project-root}/_bmad/gds/workflows/1-preproduction/game-brief/workflow.yaml'
+gddWorkflow: '{project-root}/_bmad/gds/workflows/2-design/gdd/workflow.yaml'
 ---
 
 # Step 4: Complete Session
@@ -124,7 +124,7 @@ Or type 'all' to see the complete document."
 
 **If not in standalone mode:**
 
-Load `{output_folder}/bmgd-workflow-status.yaml` and:
+Load `{output_folder}/gds-workflow-status.yaml` and:
 
 - Update `brainstorm-game` status to the output file path
 - Preserve all comments and structure

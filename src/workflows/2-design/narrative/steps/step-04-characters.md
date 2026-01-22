@@ -3,7 +3,7 @@ name: 'step-04-characters'
 description: 'Develop all characters including protagonists, antagonists, supporting cast, and their arcs'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-04-characters.md'

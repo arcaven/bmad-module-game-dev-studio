@@ -2,7 +2,7 @@
 name: 'step-01-mode-detection'
 description: 'Determine execution mode (tech-spec vs direct), handle escalation, set state variables'
 
-workflow_path: '{project-root}/_bmad/bmgd/workflows/bmgd-quick-flow/quick-dev'
+workflow_path: '{project-root}/_bmad/gds/workflows/gds-quick-flow/quick-dev'
 thisStepFile: './step-01-mode-detection.md'
 nextStepFile_modeA: './step-03-execute.md'
 nextStepFile_modeB: './step-02-context-gathering.md'
@@ -117,7 +117,7 @@ This looks like a focused feature with multiple components.
 ```
 This sounds like platform/system work.
 
-**[w] Start BMGD Method** (recommended)
+**[w] Start GDS Method** (recommended)
 **[t] Create tech-spec** (lighter planning)
 **[e] Execute directly** - feeling lucky
 ```

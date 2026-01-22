@@ -2,7 +2,7 @@
 
 # Performance Testing Strategy
 
-**Workflow ID**: `_bmad/bmgd/gametest/performance`
+**Workflow ID**: `_bmad/gds/gametest/performance`
 **Version**: 1.0 (BMad v6)
 
 ---

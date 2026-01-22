@@ -3,7 +3,7 @@ name: 'step-08-delivery'
 description: 'Design narrative delivery methods including cutscenes, in-game storytelling, and endings'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-08-delivery.md'

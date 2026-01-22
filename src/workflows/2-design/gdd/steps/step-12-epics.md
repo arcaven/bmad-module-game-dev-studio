@@ -3,7 +3,7 @@ name: 'step-12-epics'
 description: 'Define development epics and high-level story breakdown'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/gdd'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/gdd'
 
 # File References
 thisStepFile: './step-12-epics.md'

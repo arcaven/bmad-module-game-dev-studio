@@ -2,11 +2,11 @@
 
 agent:
   metadata:
-    id: "_bmad/bmgd/agents/game-architect.md"
+    id: "_bmad/gds/agents/game-architect.md"
     name: Cloud Dragonborn
     title: Game Architect
     icon: 🏛️
-    module: bmgd
+    module: gds
     hasSidecar: false
 
   persona:
@@ -27,14 +27,14 @@ agent:
 
   menu:
     - trigger: GA or fuzzy match on game-architecture
-      exec: "{project-root}/_bmad/bmgd/workflows/3-technical/game-architecture/workflow.md"
+      exec: "{project-root}/_bmad/gds/workflows/3-technical/game-architecture/workflow.md"
       description: "[GA] Produce a Scale Adaptive Game Architecture"
 
     - trigger: PC or fuzzy match on project-context
-      exec: "{project-root}/_bmad/bmgd/workflows/3-technical/generate-project-context/workflow.md"
+      exec: "{project-root}/_bmad/gds/workflows/3-technical/generate-project-context/workflow.md"
       description: "[PC] Create optimized project-context.md for AI agent consistency"
 
     - trigger: CC or fuzzy match on correct-course
-      workflow: "{project-root}/_bmad/bmgd/workflows/4-production/correct-course/workflow.yaml"
+      workflow: "{project-root}/_bmad/gds/workflows/4-production/correct-course/workflow.yaml"
       description: "[CC] Course Correction Analysis (when implementation is off-track)"
       ide-only: true

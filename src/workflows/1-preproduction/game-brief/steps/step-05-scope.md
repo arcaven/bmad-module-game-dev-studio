@@ -3,7 +3,7 @@ name: 'step-05-scope'
 description: 'Define project scope including platforms, constraints, and resources'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/1-preproduction/game-brief'
+workflow_path: '{project-root}/_bmad/gds/workflows/1-preproduction/game-brief'
 
 # File References
 thisStepFile: './step-05-scope.md'

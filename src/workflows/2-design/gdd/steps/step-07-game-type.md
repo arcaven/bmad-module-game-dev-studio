@@ -3,7 +3,7 @@ name: 'step-07-game-type'
 description: 'Process game-type specific sections from the loaded game type guide'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/gdd'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/gdd'
 
 # File References
 thisStepFile: './step-07-game-type.md'

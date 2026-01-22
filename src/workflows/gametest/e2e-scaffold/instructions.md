@@ -2,7 +2,7 @@
 
 # E2E Test Infrastructure Scaffold
 
-**Workflow ID**: `_bmad/bmgd/gametest/e2e-scaffold`
+**Workflow ID**: `_bmad/gds/gametest/e2e-scaffold`
 **Version**: 1.0 (BMad v6)
 
 ---

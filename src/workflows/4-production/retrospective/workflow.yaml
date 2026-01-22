@@ -3,7 +3,7 @@ name: "retrospective"
 description: "Run after epic completion to review overall success, extract lessons learned, and explore if new information emerged that might impact the next epic"
 author: "BMad"
 
-config_source: "{project-root}/_bmad/bmgd/config.yaml"
+config_source: "{project-root}/_bmad/gds/config.yaml"
 output_folder: "{config_source}:implementation_artifacts}"
 user_name: "{config_source}:user_name"
 communication_language: "{config_source}:communication_language"
@@ -13,7 +13,7 @@ date: system-generated
 planning_artifacts: "{config_source}:planning_artifacts"
 implementation_artifacts: "{config_source}:implementation_artifacts"
 
-installed_path: "{project-root}/_bmad/bmgd/workflows/4-production/retrospective"
+installed_path: "{project-root}/_bmad/gds/workflows/4-production/retrospective"
 template: false
 instructions: "{installed_path}/instructions.md"
 

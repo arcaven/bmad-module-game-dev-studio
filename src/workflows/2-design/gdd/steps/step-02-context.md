@@ -3,7 +3,7 @@ name: 'step-02-context'
 description: 'Load game context from brief and determine the game type'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/gdd'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/gdd'
 
 # File References
 thisStepFile: './step-02-context.md'

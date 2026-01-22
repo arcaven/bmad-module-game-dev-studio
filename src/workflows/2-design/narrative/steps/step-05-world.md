@@ -3,7 +3,7 @@ name: 'step-05-world'
 description: 'Build the world including setting, history, factions, and key locations'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-05-world.md'

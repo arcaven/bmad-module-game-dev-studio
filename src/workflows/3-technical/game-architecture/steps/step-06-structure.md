@@ -3,7 +3,7 @@ name: 'step-06-structure'
 description: 'Define project structure, directory organization, and architectural boundaries'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/3-technical/game-architecture'
+workflow_path: '{project-root}/_bmad/gds/workflows/3-technical/game-architecture'
 
 # File References
 thisStepFile: './step-06-structure.md'

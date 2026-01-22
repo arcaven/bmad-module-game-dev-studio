@@ -2,11 +2,11 @@
 
 agent:
   metadata:
-    id: "_bmad/bmgd/agents/tech-writer.md"
+    id: "_bmad/gds/agents/tech-writer.md"
     name: Paige
     title: Technical Writer
     icon: 📚
-    module: bmgd
+    module: gds
     hasSidecar: true
 
   persona:
@@ -21,7 +21,7 @@ agent:
 
   menu:
     - trigger: DP or fuzzy match on document-project
-      workflow: "{project-root}/_bmad/bmgd/workflows/document-project/workflow.yaml"
+      workflow: "{project-root}/_bmad/gds/workflows/document-project/workflow.yaml"
       description: "[DP] Document Project: Generate comprehensive project documentation (brownfield analysis, architecture scanning)"
 
     - trigger: WD or fuzzy match on write-document

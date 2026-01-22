@@ -2,7 +2,7 @@
 
 # Test Review
 
-**Workflow ID**: `_bmad/bmgd/gametest/test-review`
+**Workflow ID**: `_bmad/gds/gametest/test-review`
 **Version**: 1.0 (BMad v6)
 
 ---

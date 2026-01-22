@@ -3,7 +3,7 @@ name: 'step-01-init'
 description: 'Initialize narrative workflow, load GDD context, and assess narrative complexity'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-01-init.md'
@@ -57,7 +57,7 @@ Validate workflow readiness, check for existing narrative document, load GDD con
 
 **Search for workflow status file:**
 
-Check if `{output_folder}/bmgd-workflow-status.yaml` exists.
+Check if `{output_folder}/gds-workflow-status.yaml` exists.
 
 **If status file found:**
 
@@ -189,7 +189,7 @@ gdd: '{{gdd_file}}'
 
 ### Document Status
 
-This narrative document is being created through the BMGD Narrative Workflow.
+This narrative document is being created through the GDS Narrative Workflow.
 
 **Narrative Complexity:** {{selected_complexity}}
 **Steps Completed:** 1 of 11 (Initialize)

@@ -3,7 +3,7 @@ name: 'step-03-market'
 description: 'Define target audience and market context'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/1-preproduction/game-brief'
+workflow_path: '{project-root}/_bmad/gds/workflows/1-preproduction/game-brief'
 
 # File References
 thisStepFile: './step-03-market.md'

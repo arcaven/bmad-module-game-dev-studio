@@ -2,11 +2,11 @@
 
 agent:
   metadata:
-    id: "_bmad/bmgd/agents/game-dev.md"
+    id: "_bmad/gds/agents/game-dev.md"
     name: Link Freeman
     title: Game Developer
     icon: 🕹️
-    module: bmgd
+    module: gds
     hasSidecar: false
 
   persona:
@@ -26,20 +26,20 @@ agent:
 
   menu:
     - trigger: DS or fuzzy match on dev-story
-      workflow: "{project-root}/_bmad/bmgd/workflows/4-production/dev-story/workflow.yaml"
+      workflow: "{project-root}/_bmad/gds/workflows/4-production/dev-story/workflow.yaml"
       description: "[DS] Execute Dev Story workflow, implementing tasks and tests"
 
     - trigger: CR or fuzzy match on code-review
-      workflow: "{project-root}/_bmad/bmgd/workflows/4-production/code-review/workflow.yaml"
+      workflow: "{project-root}/_bmad/gds/workflows/4-production/code-review/workflow.yaml"
       description: "[CR] Perform a thorough clean context QA code review on a story flagged Ready for Review"
 
     - trigger: QD or fuzzy match on quick-dev
-      workflow: "{project-root}/_bmad/bmgd/workflows/bmgd-quick-flow/quick-dev/workflow.yaml"
+      workflow: "{project-root}/_bmad/gds/workflows/gds-quick-flow/quick-dev/workflow.yaml"
       description: "[QD] Flexible game development - implement features with game-specific considerations"
       ide-only: true
 
     - trigger: QP or fuzzy match on quick-prototype
-      workflow: "{project-root}/_bmad/bmgd/workflows/bmgd-quick-flow/quick-prototype/workflow.yaml"
+      workflow: "{project-root}/_bmad/gds/workflows/gds-quick-flow/quick-prototype/workflow.yaml"
       description: "[QP] Rapid game prototyping - test mechanics and ideas quickly"
       ide-only: true
 

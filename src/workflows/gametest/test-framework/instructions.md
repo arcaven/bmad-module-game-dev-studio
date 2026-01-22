@@ -2,7 +2,7 @@
 
 # Game Test Framework Setup
 
-**Workflow ID**: `_bmad/bmgd/gametest/framework`
+**Workflow ID**: `_bmad/gds/gametest/framework`
 **Version**: 1.0 (BMad v6)
 
 ---

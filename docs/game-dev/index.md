@@ -9,7 +9,7 @@ Complete guides for the BMad Game Development Module (BMGD) — AI-powered workf
 
 **New to BMGD?** Start here:
 
-- **[Quick Start Guide](/docs/tutorials/getting-started/quick-start-bmgd.md)** - Get started building your first game
+- **[Quick Start Guide](/docs/tutorials/getting-started/quick-start-gds.md)** - Get started building your first game
   - Installation and setup
   - Understanding the game development phases
   - Running your first workflows
@@ -22,7 +22,7 @@ Install BMGD module → Game Brief → GDD → Architecture → Build
 ## Core Documentation
 
 - **[Game Types Guide](/docs/explanation/game-dev/game-types.md)** - Selecting and using game type templates (24 supported types)
-- **[BMGD vs BMM](/docs/explanation/game-dev/bmgd-vs-bmm.md)** - Understanding the differences
+- **[BMGD vs BMM](/docs/explanation/game-dev/gds-vs-bmm.md)** - Understanding the differences
 
 ## Game Development Phases
 
@@ -51,7 +51,7 @@ BMGD follows four phases aligned with game development:
 ### I need to...
 
 **Start a new game project**
-→ Start with [Quick Start Guide](/docs/tutorials/getting-started/quick-start-bmgd.md)
+→ Start with [Quick Start Guide](/docs/tutorials/getting-started/quick-start-gds.md)
 → Run `brainstorm-game` for ideation
 → Create a Game Brief with `create-brief`
 
@@ -67,4 +67,4 @@ BMGD follows four phases aligned with game development:
 → Follow the sprint-based development cycle
 
 **Quickly test an idea**
-→ Use [Quick-Flow](/docs/how-to/workflows/bmgd-quick-flow.md) for rapid prototyping
+→ Use [Quick-Flow](/docs/how-to/workflows/gds-quick-flow.md) for rapid prototyping

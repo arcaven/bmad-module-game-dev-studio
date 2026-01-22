@@ -3,7 +3,7 @@ name: 'step-06-mechanics'
 description: 'Define primary game mechanics and control schemes'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/gdd'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/gdd'
 
 # File References
 thisStepFile: './step-06-mechanics.md'

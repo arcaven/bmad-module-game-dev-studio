@@ -1,7 +1,7 @@
 ---
 name: create-gdd
 description: Creates a comprehensive Game Design Document through collaborative step-by-step discovery between game designer and user.
-main_config: '{project-root}/_bmad/bmgd/config.yaml'
+main_config: '{project-root}/_bmad/gds/config.yaml'
 web_bundle: true
 ---
 

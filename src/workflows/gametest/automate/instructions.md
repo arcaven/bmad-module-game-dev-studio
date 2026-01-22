@@ -2,7 +2,7 @@
 
 # Game Test Automation
 
-**Workflow ID**: `_bmad/bmgd/gametest/automate`
+**Workflow ID**: `_bmad/gds/gametest/automate`
 **Version**: 1.0 (BMad v6)
 
 ---

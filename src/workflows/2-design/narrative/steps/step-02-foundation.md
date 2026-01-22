@@ -3,7 +3,7 @@ name: 'step-02-foundation'
 description: 'Define narrative premise, themes, tone, and story structure'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-02-foundation.md'

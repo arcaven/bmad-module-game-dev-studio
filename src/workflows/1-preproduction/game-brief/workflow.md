@@ -1,7 +1,7 @@
 ---
 name: create-game-brief
 description: Creates a comprehensive Game Brief through collaborative step-by-step discovery to capture game vision before detailed design.
-main_config: '{project-root}/_bmad/bmgd/config.yaml'
+main_config: '{project-root}/_bmad/gds/config.yaml'
 web_bundle: true
 ---
 

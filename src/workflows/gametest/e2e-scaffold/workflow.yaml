@@ -4,7 +4,7 @@ workflow:
   id: e2e-scaffold
   name: E2E Test Infrastructure Scaffold
   version: 1.0
-  module: bmgd
+  module: gds
   agent: game-qa
 
   description: |

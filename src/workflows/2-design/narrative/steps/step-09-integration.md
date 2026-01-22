@@ -3,7 +3,7 @@ name: 'step-09-integration'
 description: 'Define how narrative integrates with gameplay including gating, agency, and ludonarrative harmony'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-09-integration.md'

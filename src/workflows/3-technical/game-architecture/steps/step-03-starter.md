@@ -3,7 +3,7 @@ name: 'step-03-starter'
 description: 'Discover and evaluate game engine and starter template options'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/3-technical/game-architecture'
+workflow_path: '{project-root}/_bmad/gds/workflows/3-technical/game-architecture'
 
 # File References
 thisStepFile: './step-03-starter.md'

@@ -3,7 +3,7 @@ name: 'step-03-ideation'
 description: 'Execute the brainstorming session with game-specific techniques'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/1-preproduction/brainstorm-game'
+workflow_path: '{project-root}/_bmad/gds/workflows/1-preproduction/brainstorm-game'
 
 # File References
 thisStepFile: './step-03-ideation.md'

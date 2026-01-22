@@ -3,7 +3,7 @@ name: 'step-07-environmental'
 description: 'Plan environmental storytelling including visual, audio, and found documents'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-07-environmental.md'

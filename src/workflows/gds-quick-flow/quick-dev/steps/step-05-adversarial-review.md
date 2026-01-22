@@ -2,7 +2,7 @@
 name: 'step-05-adversarial-review'
 description: 'Construct diff and invoke adversarial review task'
 
-workflow_path: '{project-root}/_bmad/bmgd/workflows/bmgd-quick-flow/quick-dev'
+workflow_path: '{project-root}/_bmad/gds/workflows/gds-quick-flow/quick-dev'
 thisStepFile: './step-05-adversarial-review.md'
 nextStepFile: './step-06-resolve-findings.md'
 ---

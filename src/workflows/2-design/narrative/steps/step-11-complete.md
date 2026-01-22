@@ -3,7 +3,7 @@ name: 'step-11-complete'
 description: 'Complete the narrative workflow with final summary, visualizations, and handoff'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/narrative'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/narrative'
 
 # File References
 thisStepFile: './step-11-complete.md'
@@ -11,7 +11,7 @@ workflowFile: '{workflow_path}/workflow.md'
 outputFile: '{output_folder}/narrative-design.md'
 
 # Handoff References
-architectureWorkflow: '{project-root}/_bmad/bmgd/workflows/3-technical/game-architecture/workflow.yaml'
+architectureWorkflow: '{project-root}/_bmad/gds/workflows/3-technical/game-architecture/workflow.yaml'
 ---
 
 # Step 11: Complete
@@ -161,7 +161,7 @@ narrativeComplexity: '{{complexity}}'
 
 **If not in standalone mode:**
 
-Load `{output_folder}/bmgd-workflow-status.yaml` and:
+Load `{output_folder}/gds-workflow-status.yaml` and:
 
 - Update `narrative` status to the output file path
 - Preserve all comments and structure

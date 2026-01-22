@@ -3,7 +3,7 @@ name: 'step-01-init'
 description: 'Initialize the architecture workflow, validate readiness, and discover input documents'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/3-technical/game-architecture'
+workflow_path: '{project-root}/_bmad/gds/workflows/3-technical/game-architecture'
 
 # File References
 thisStepFile: './step-01-init.md'
@@ -184,7 +184,7 @@ brief: '{{brief_file_or_null}}'
 
 ## Document Status
 
-This architecture document is being created through the BMGD Architecture Workflow.
+This architecture document is being created through the GDS Architecture Workflow.
 
 **Steps Completed:** 1 of 9 (Initialize)
 

@@ -3,7 +3,7 @@ name: 'step-11-technical'
 description: 'Define technical specifications and requirements'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/2-design/gdd'
+workflow_path: '{project-root}/_bmad/gds/workflows/2-design/gdd'
 
 # File References
 thisStepFile: './step-11-technical.md'

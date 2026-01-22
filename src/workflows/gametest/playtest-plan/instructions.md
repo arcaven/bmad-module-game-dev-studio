@@ -2,7 +2,7 @@
 
 # Playtest Planning
 
-**Workflow ID**: `_bmad/bmgd/gametest/playtest-plan`
+**Workflow ID**: `_bmad/gds/gametest/playtest-plan`
 **Version**: 1.0 (BMad v6)
 
 ---

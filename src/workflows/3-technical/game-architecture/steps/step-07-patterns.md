@@ -3,7 +3,7 @@ name: 'step-07-patterns'
 description: 'Design implementation patterns and novel architectural patterns for consistency'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/3-technical/game-architecture'
+workflow_path: '{project-root}/_bmad/gds/workflows/3-technical/game-architecture'
 
 # File References
 thisStepFile: './step-07-patterns.md'

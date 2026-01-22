@@ -3,7 +3,7 @@ name: 'step-09-complete'
 description: 'Complete the architecture workflow with final review and handoff guidance'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/3-technical/game-architecture'
+workflow_path: '{project-root}/_bmad/gds/workflows/3-technical/game-architecture'
 
 # File References
 thisStepFile: './step-09-complete.md'
@@ -11,8 +11,8 @@ workflowFile: '{workflow_path}/workflow.md'
 outputFile: '{output_folder}/game-architecture.md'
 
 # Handoff References
-epicWorkflow: '{project-root}/_bmad/bmgd/workflows/4-production/epic-workflow/workflow.yaml'
-projectContextWorkflow: '{project-root}/_bmad/bmgd/workflows/3-technical/generate-project-context/workflow.md'
+epicWorkflow: '{project-root}/_bmad/gds/workflows/4-production/epic-workflow/workflow.yaml'
+projectContextWorkflow: '{project-root}/_bmad/gds/workflows/3-technical/generate-project-context/workflow.md'
 ---
 
 # Step 9: Completion
@@ -137,7 +137,7 @@ platform: '{{platform}}'
 
 **If not in standalone mode:**
 
-Load `{output_folder}/bmgd-workflow-status.yaml` and:
+Load `{output_folder}/gds-workflow-status.yaml` and:
 
 - Update `create-architecture` status to the output file path
 - Preserve all comments and structure

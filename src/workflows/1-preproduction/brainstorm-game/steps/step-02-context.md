@@ -3,7 +3,7 @@ name: 'step-02-context'
 description: 'Load game-specific brainstorming context and techniques'
 
 # Path Definitions
-workflow_path: '{project-root}/_bmad/bmgd/workflows/1-preproduction/brainstorm-game'
+workflow_path: '{project-root}/_bmad/gds/workflows/1-preproduction/brainstorm-game'
 
 # File References
 thisStepFile: './step-02-context.md'
