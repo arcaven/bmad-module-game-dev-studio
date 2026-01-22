@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v6.0.2 - Jan 22, 2026
+
+* Workflow init replaced with new help system
+
 ## v6.0.1 - Jan 21, 2026
 
 NOTE: This is in preparation for BMAD's Beta 6 launch. It is a *significant* update and recommended for all BMGD users as it integrates all the new BMAD Beta 6 work done in the past month. Documentation is still incomplete and will come shortly. Thank you for your patience.
