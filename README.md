@@ -1,41 +1,115 @@
-# GDS - BMAD Game Development Suite
+# BMad Game Dev Studio
 
-![](docs/bmgd-logo.png)
+[![Version](https://img.shields.io/npm/v/bmad-game-dev-studio?color=blue&label=version)](https://www.npmjs.com/package/bmad-game-dev-studio)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da?logo=discord&logoColor=white)](https://discord.gg/gk8jAdXWmj)
 
-BMAD Game Development Suite (GDS) brings the power of BMAD's project planning and structured development to game development. Create working prototypes quickly in three of the industry's leading 3D engines (Unity, Unreal, and Godot) or whatever platform you like. GDS will lead you through product research, technical design, narrative design, and a full epic-driven production cycle, developed by game industry veterans off of BMAD Method's core.
+**BMGD brings BMad's structured development to game development.** Create working prototypes quickly in Unity, Unreal, Godot—or any engine you choose.
 
-Sound like *too much* power? You can also use GDS to quickly prototype an idea, skipping most of the planning steps and going straight into breaking things in your engine of choice!
+![BMGD Logo](docs/bmgd-logo.png)
 
-## What can BMGD do?
+## About BMGD
 
-GDS, out of the box, contains support for game development and testing in:
+BMad Game Dev Studio (BMGD) adapts the BMad Method framework for game development. Developed by game industry veterans, BMGD guides you through product research, technical design, narrative design, and a full epic-driven production cycle.
 
-* [Unity](https://unity.com)
-* [Unreal](https://www.unrealengine.com/)
-* [Godot](https://godotengine.org/)
+## Supported Engines
 
-However, these engines *aren't a requirement* - if you want to make a roguelike in pure C, BMGD can handle it.  The GDS process will guide you through every step of creating a game project, all the way to release.
+BMGD has first-class support for:
 
-As for what kind of games you can create? GDS has support for *21* game types, from turn-based strategy to visual novels to survival games. And if your game idea doesn't fit in any one of those, that's fine, too.
+- [Unity](https://unity.com) — C# scripting, industry-standard for many game types
+- [Unreal Engine](https://www.unrealengine.com/) — Blueprint and C++, AAA powerhouse
+- [Godot](https://godotengine.org/) — Open-source, GDScript, rapidly growing
 
-## What can't GDS do?
+But you're not limited to these—BMGD works with any platform, from pure C to custom engines.
 
-With very few simple exceptions, *GDS cannot create an entire game from scratch for you.* 
+## What You Can Create
 
-GDS is designed to work with *coding agents* such as Claude Code, Codex, Gemini, or Github Copilot. There are *many* aspects of game development that are outside the scope of these agents - such as art assets such as models and textures, animations, music, and sound effects. GDS can work to integrate these into your chosen engine, but it *can't* create them. 
+BMGD supports **21 game types**, including:
 
-As such, it's designed to be part of your development team, not a one-stop solution for creating a game.
+| Genre | Examples |
+|-------|----------|
+| Action | Platformers, shooters, hack-and-slash |
+| RPG | Action RPG, tactical RPG, dungeon crawlers |
+| Strategy | Turn-based, RTS, tower defense |
+| Simulation | Life sim, tycoon, management |
+| Adventure | Visual novels, point-and-click, walking simulators |
+| And more... | Survival, horror, puzzle, racing, etc. |
 
-## What do I need to do to begin?
+## What BMGD Does
 
-To install GDS, just select it as part of the BMAD Method install. To update it, simply re-install BMAD Method.
+- **Product Research** — Market analysis, competitor research, positioning
+- **Game Design Document** — Comprehensive GDD with mechanics, progression, and balance
+- **Narrative Design** — Story structure, characters, dialogue, world-building
+- **Technical Architecture** — Engine patterns, performance considerations
+- **Production Planning** — Epic-driven sprints, story tracking, retrospectives
+- **Quick Prototyping** — Skip the planning, jump straight into building
 
-* Follow this walkthrough TODO! to install GDS and create your first project.
-* Read this tutorial TODO! on using Quick-Dev to create a prototype quickly
-* Consult the tomes of documentation TODO! on all the functionality GDS has to offer.
+## What BMGD Doesn't Do
 
-## This is a lot! Can I get some help?
+BMGD works *with* coding agents like Claude Code, Cursor, or GitHub Copilot—but it can't create everything:
 
-Absolutely! The best place to get help is on our friendly BMAD Method Discord. There's a specific GDS forum (link TODO!!) where the developers and other GDS users will be glad to help out!
+- Art assets (models, textures, sprites)
+- Animations
+- Music and sound effects
+- Full game implementation from scratch
 
-*BMAD GDS - If you can dream it, you can do it.*
+Think of BMGD as your senior game dev colleague—not a replacement for your entire team.
+
+## Installation
+
+BMGD is installed as a module during BMad Method setup:
+
+```bash
+npx bmad-method@alpha install
+```
+
+Select **Game Dev Studio** from the modules list.
+
+## Quick Start
+
+After installing, run from your project root:
+
+```
+/bmgd-help          # Get guided help for game development
+/bmgd-quick-dev     # Jump straight into prototyping
+/bmgd-gdd           # Create a Game Design Document
+/bmgd-narrative     # Design your game's story
+```
+
+## Two Ways to Work
+
+| Approach | When to Use | Workflow |
+|----------|-------------|----------|
+| **Quick Flow** | Rapid prototyping, small projects | `/bmgd-quick-dev` |
+| **Full Production** | Full games, teams, long-term | `/bmgd-help` for guided path |
+
+## Example: Starting a New Game
+
+```
+You: /bmgd-help
+BMGD: What kind of game are you making?
+You: A tactical sci-fi RPG
+BMGD: Great choice! Here's what I recommend...
+    [Guides you through genre-specific planning]
+    [Helps select appropriate workflows]
+```
+
+## Documentation
+
+- [BMad Method Docs](http://docs.bmad-method.org)
+- [BMGD Guide](http://docs.bmad-method.org/bmgd/)
+
+## Community
+
+- [Discord](https://discord.gg/gk8jAdXWmj) — Get help from other game devs
+- [GitHub Issues](https://github.com/bmad-code-org/bmad-module-game-dev-studio/issues) — Report bugs
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
+
+---
+
+**BMad Game Dev Studio** — Part of the [BMad Method](https://github.com/bmad-code-org/BMAD-METHOD) ecosystem.
+
+*If you can dream it, you can build it.*
