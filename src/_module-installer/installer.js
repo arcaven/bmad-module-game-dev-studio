@@ -26,7 +26,7 @@ function isWithinProjectRoot(resolvedPath, projectRoot) {
  * @returns {Promise<boolean>} - Success status
  */
 async function install(options) {
-  const { projectRoot, config, installedIDEs, logger } = options;
+  const { projectRoot, config, logger } = options;
 
   try {
     logger.log(chalk.blue('🎮 Installing BMGD Module...'));
