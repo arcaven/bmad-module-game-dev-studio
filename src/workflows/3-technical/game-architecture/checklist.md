@@ -59,6 +59,13 @@
 - [ ] Remaining decisions (not covered by starter) clearly identified
 - [ ] No duplicate decisions that starter already makes
 
+### AI Tooling (MCP Servers)
+
+- [ ] Available MCPs for chosen engine identified and presented to user
+- [ ] User preference recorded (accepted or declined)
+- [ ] If accepted: MCP capabilities and setup instructions included in Development Environment
+- [ ] If declined: Note that MCPs can be added later
+
 ---
 
 ## 4. Novel Pattern Design (if applicable)

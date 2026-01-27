@@ -86,6 +86,10 @@ These patterns ensure consistent implementation across all AI agents:
 
 {{development_prerequisites}}
 
+### AI Tooling (MCP Servers)
+
+{{mcp_recommendations}}
+
 ### Setup Commands
 
 ```bash

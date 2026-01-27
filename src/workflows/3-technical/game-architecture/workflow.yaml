@@ -22,6 +22,7 @@ template: "{installed_path}/templates/architecture-template.md"
 decision_catalog: "{installed_path}/decision-catalog.yaml"
 architecture_patterns: "{installed_path}/architecture-patterns.yaml"
 pattern_categories: "{installed_path}/pattern-categories.csv"
+engine_mcps: "{installed_path}/engine-mcps.yaml"
 
 # Smart input file references - handles both whole docs and sharded docs
 input_file_patterns:
@@ -65,6 +66,7 @@ features:
   - "Novel pattern design for unique concepts"
   - "Intelligent pattern identification"
   - "Implementation patterns for agent consistency"
+  - "Game engine MCP recommendations for AI-assisted development"
   - "State tracking via frontmatter"
 
 standalone: true
@@ -96,3 +98,4 @@ web_bundle:
     - "_bmad/gds/workflows/3-technical/game-architecture/decision-catalog.yaml"
     - "_bmad/gds/workflows/3-technical/game-architecture/architecture-patterns.yaml"
     - "_bmad/gds/workflows/3-technical/game-architecture/pattern-categories.csv"
+    - "_bmad/gds/workflows/3-technical/game-architecture/engine-mcps.yaml"

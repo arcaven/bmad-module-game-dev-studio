@@ -1,222 +1,340 @@
-# Decision Catalog - Composability knowledge for architectural decisions
+# Decision Catalog - Composability knowledge for game architectural decisions
 # This provides RELATIONSHIPS and WORKFLOW LOGIC, not generic tech knowledge
 #
 # ⚠️ CRITICAL: All version/feature info MUST be verified via WebSearch during workflow
 # This file only provides: triggers, relationships (pairs_with), and opinionated stacks
 
 decision_categories:
-  data_persistence:
-    triggers: ["database", "storage", "data model", "persistence", "state management"]
+  game_engine:
+    triggers: ["engine", "framework", "game framework", "renderer", "runtime"]
     importance: "critical"
-    affects: "most epics"
+    affects: "all epics"
     options:
-      postgresql:
-        pairs_with: ["Prisma ORM", "TypeORM", "Drizzle", "node-postgres"]
-      mongodb:
-        pairs_with: ["Mongoose", "Prisma", "MongoDB driver"]
-      redis:
-        pairs_with: ["ioredis", "node-redis"]
-      supabase:
-        pairs_with: ["@supabase/supabase-js"]
-      firebase:
-        pairs_with: ["firebase-admin"]
+      unity:
+        pairs_with: ["C#", "URP", "HDRP", "Unity Input System", "Addressables", "Unity Gaming Services"]
+      unreal:
+        pairs_with: ["C++", "Blueprints", "Nanite", "Lumen", "Enhanced Input", "Unreal Online Subsystem"]
+      godot:
+        pairs_with: ["GDScript", "C#", "GDExtension", "Godot Physics", "GodotSteam"]
+      phaser:
+        pairs_with: ["JavaScript", "TypeScript", "Matter.js", "Arcade Physics"]
+      bevy:
+        pairs_with: ["Rust", "ECS", "wgpu"]
+      monogame:
+        pairs_with: ["C#", "FNA", "FMOD"]
 
-  api_pattern:
-    triggers: ["API", "client communication", "frontend backend", "service communication"]
+  rendering_pipeline:
+    triggers: ["graphics", "rendering", "shaders", "visual style", "art style", "2D", "3D", "pixel art"]
     importance: "critical"
-    affects: "all client-facing epics"
+    affects: "all visual epics"
     options:
-      rest:
-        pairs_with: ["Express", "Fastify", "NestJS", "Hono"]
-      graphql:
-        pairs_with: ["Apollo Server", "GraphQL Yoga", "Mercurius"]
-      trpc:
-        pairs_with: ["Next.js", "React Query"]
-      grpc:
-        pairs_with: ["@grpc/grpc-js", "protobufjs"]
+      unity_urp:
+        pairs_with: ["Unity", "Shader Graph", "2D Renderer", "mobile targets"]
+      unity_hdrp:
+        pairs_with: ["Unity", "Shader Graph", "ray tracing", "high-end PC/console"]
+      unreal_nanite_lumen:
+        pairs_with: ["Unreal", "virtual geometry", "global illumination", "high-end PC/console"]
+      unreal_forward:
+        pairs_with: ["Unreal", "mobile", "VR", "stylized rendering"]
+      godot_vulkan:
+        pairs_with: ["Godot", "Forward+", "mid-range hardware"]
+      godot_compatibility:
+        pairs_with: ["Godot", "OpenGL", "mobile", "web export"]
+      custom_2d:
+        pairs_with: ["Phaser", "SDL", "sprite batching", "pixel art"]
 
-  authentication:
-    triggers: ["auth", "login", "user management", "security", "identity"]
+  physics_system:
+    triggers: ["physics", "collision", "rigid body", "character controller", "raycasting", "platformer movement"]
+    importance: "high"
+    affects: "gameplay and movement epics"
+    options:
+      engine_native:
+        pairs_with: ["PhysX (Unity)", "Chaos (Unreal)", "Godot Physics"]
+      jolt:
+        pairs_with: ["Godot (Jolt plugin)", "custom engines"]
+      box2d:
+        pairs_with: ["2D games", "Godot", "Phaser (Matter.js alternative)"]
+      custom_controller:
+        pairs_with: ["platformers", "raycasting", "kinematic bodies"]
+      deterministic:
+        pairs_with: ["rollback netcode", "fixed-point math", "lockstep multiplayer"]
+
+  audio_system:
+    triggers: ["audio", "music", "sound effects", "SFX", "adaptive music", "spatial audio", "voice"]
+    importance: "medium"
+    affects: "audio and ambiance epics"
+    options:
+      engine_native:
+        pairs_with: ["Unity Audio", "Unreal MetaSounds", "Godot AudioStreamPlayer"]
+      fmod:
+        pairs_with: ["Unity", "Unreal", "Godot (via plugin)", "adaptive music", "large projects"]
+      wwise:
+        pairs_with: ["Unity", "Unreal", "AAA projects", "spatial audio", "large sound libraries"]
+
+  networking:
+    triggers: ["multiplayer", "online", "netcode", "co-op", "PvP", "lobby", "matchmaking", "dedicated server"]
     importance: "critical"
-    affects: "security and user epics"
+    affects: "all multiplayer epics"
     options:
-      nextauth:
-        pairs_with: ["Next.js", "Prisma"]
-      auth0:
-        pairs_with: ["@auth0/nextjs-auth0"]
-      clerk:
-        pairs_with: ["@clerk/nextjs"]
-      supabase_auth:
-        pairs_with: ["@supabase/supabase-js"]
-      firebase_auth:
-        pairs_with: ["firebase-admin"]
+      unity_netcode:
+        pairs_with: ["Unity", "Netcode for GameObjects", "Unity Relay", "Unity Lobby"]
+      photon:
+        pairs_with: ["Unity", "Photon Fusion", "Photon Quantum", "Photon Voice"]
+      mirror:
+        pairs_with: ["Unity", "open source", "server authoritative"]
+      unreal_replication:
+        pairs_with: ["Unreal", "built-in replication", "dedicated servers", "listen servers"]
+      eos:
+        pairs_with: ["Epic Online Services", "cross-platform", "lobbies", "voice", "anti-cheat"]
+      steam_networking:
+        pairs_with: ["Steamworks", "peer-to-peer", "relay", "PC-focused"]
+      godot_multiplayer:
+        pairs_with: ["Godot", "MultiplayerAPI", "ENet", "WebSocket"]
+      custom_udp:
+        pairs_with: ["ENet", "LiteNetLib", "GameServer.io", "custom protocol"]
 
-  real_time:
-    triggers: ["real-time", "websocket", "live updates", "chat", "collaboration"]
+  input_system:
+    triggers: ["input", "controls", "controller", "gamepad", "keyboard", "touch", "gesture", "rebinding"]
+    importance: "high"
+    affects: "player interaction epics"
+    options:
+      unity_input_system:
+        pairs_with: ["Unity", "action maps", "rebinding", "multiple devices"]
+      unreal_enhanced_input:
+        pairs_with: ["Unreal", "input actions", "modifiers", "triggers"]
+      godot_input_map:
+        pairs_with: ["Godot", "InputMap", "action system"]
+      rewired:
+        pairs_with: ["Unity", "advanced controller support", "Steam Input"]
+      custom_buffer:
+        pairs_with: ["fighting games", "input buffering", "command parsing"]
+
+  ai_system:
+    triggers: ["AI", "enemies", "NPC", "behavior", "pathfinding", "navigation", "companion"]
+    importance: "high"
+    affects: "AI and gameplay epics"
+    options:
+      behavior_trees:
+        pairs_with: ["Unity (Behavior Designer)", "Unreal (Behavior Trees)", "Godot (LimboAI)"]
+      state_machines:
+        pairs_with: ["any engine", "simple enemy AI", "animation state"]
+      goap:
+        pairs_with: ["emergent behavior", "complex NPCs", "simulation games"]
+      utility_ai:
+        pairs_with: ["dynamic decision making", "The Sims-style", "squad tactics"]
+      navigation_mesh:
+        pairs_with: ["Unity NavMesh", "Unreal NavMesh", "Godot NavigationServer", "3D pathfinding"]
+      astar_grid:
+        pairs_with: ["2D games", "tile-based", "grid pathfinding", "RTS"]
+
+  save_persistence:
+    triggers: ["save", "load", "persistence", "progress", "cloud save", "save file", "checkpoint"]
+    importance: "high"
+    affects: "progression and data epics"
+    options:
+      player_prefs:
+        pairs_with: ["Unity PlayerPrefs", "Godot ConfigFile", "simple key-value", "settings only"]
+      serialized_json:
+        pairs_with: ["any engine", "JSON save files", "versioned schema", "complex state"]
+      sqlite:
+        pairs_with: ["large save data", "queryable state", "inventory-heavy games"]
+      platform_cloud:
+        pairs_with: ["Steam Cloud", "PSN", "Xbox Cloud", "iCloud", "Google Play"]
+      custom_binary:
+        pairs_with: ["performance-sensitive", "large worlds", "anti-tamper"]
+
+  ui_framework:
+    triggers: ["UI", "HUD", "menu", "inventory screen", "dialogue box", "health bar", "minimap"]
     importance: "medium"
-    affects: "real-time features"
+    affects: "UI and UX epics"
     options:
-      socket_io:
-        pairs_with: ["Express", "socket.io-client"]
-      pusher:
-        pairs_with: ["pusher-js"]
-      ably:
-        pairs_with: ["ably"]
-      supabase_realtime:
-        pairs_with: ["@supabase/supabase-js"]
-      firebase_realtime:
-        pairs_with: ["firebase"]
+      unity_ui_toolkit:
+        pairs_with: ["Unity", "USS styling", "UXML layout", "runtime UI"]
+      unity_ugui:
+        pairs_with: ["Unity", "Canvas", "legacy but mature", "wide plugin support"]
+      unreal_umg:
+        pairs_with: ["Unreal", "UMG widgets", "Blueprints", "Slate (C++)"]
+      godot_control:
+        pairs_with: ["Godot", "Control nodes", "themes", "containers"]
+      imgui:
+        pairs_with: ["debug tools", "dev UI", "any engine via binding"]
 
-  email:
-    triggers: ["email", "notifications", "transactional email"]
+  asset_pipeline:
+    triggers: ["assets", "textures", "models", "sprites", "animation", "import", "asset bundles", "streaming"]
     importance: "medium"
-    affects: "notification epics"
+    affects: "content and loading epics"
     options:
-      resend:
-        pairs_with: ["resend", "react-email"]
-      sendgrid:
-        pairs_with: ["@sendgrid/mail"]
-      postmark:
-        pairs_with: ["postmark"]
-      ses:
-        pairs_with: ["@aws-sdk/client-ses"]
+      unity_addressables:
+        pairs_with: ["Unity", "async loading", "content updates", "DLC"]
+      unity_resources:
+        pairs_with: ["Unity", "simple projects", "no remote content"]
+      unreal_asset_manager:
+        pairs_with: ["Unreal", "async loading", "streaming levels", "pak files"]
+      godot_resource_loader:
+        pairs_with: ["Godot", "ResourceLoader", "threaded loading", "PCK files"]
 
-  file_storage:
-    triggers: ["upload", "file storage", "images", "media", "CDN"]
-    importance: "medium"
-    affects: "media handling epics"
-    options:
-      s3:
-        pairs_with: ["@aws-sdk/client-s3", "multer"]
-      cloudinary:
-        pairs_with: ["cloudinary"]
-      uploadthing:
-        pairs_with: ["uploadthing"]
-      supabase_storage:
-        pairs_with: ["@supabase/supabase-js"]
-
-  search:
-    triggers: ["search", "full text", "elasticsearch", "algolia", "fuzzy"]
-    importance: "medium"
-    affects: "search and discovery epics"
-    options:
-      postgres_fts:
-        pairs_with: ["PostgreSQL"]
-      elasticsearch:
-        pairs_with: ["@elastic/elasticsearch"]
-      algolia:
-        pairs_with: ["algoliasearch"]
-      typesense:
-        pairs_with: ["typesense"]
-
-  background_jobs:
-    triggers: ["queue", "jobs", "workers", "async", "background processing", "scheduled"]
-    importance: "medium"
-    affects: "async processing epics"
-    options:
-      bullmq:
-        pairs_with: ["Redis"]
-      sqs:
-        pairs_with: ["@aws-sdk/client-sqs"]
-      temporal:
-        pairs_with: ["@temporalio/client"]
-      inngest:
-        pairs_with: ["inngest"]
-
-  deployment_target:
-    triggers: ["deployment", "hosting", "infrastructure", "cloud", "server"]
+  deployment_platform:
+    triggers: ["platform", "target", "build", "export", "Steam", "console", "mobile", "web"]
     importance: "high"
     affects: "all epics"
     options:
-      vercel:
-        pairs_with: ["Next.js", "serverless functions"]
-      aws:
-        pairs_with: ["any stack"]
-      railway:
-        pairs_with: ["any stack", "managed databases"]
-      fly_io:
-        pairs_with: ["Docker containers"]
+      steam_pc:
+        pairs_with: ["Steamworks SDK", "Steam Cloud", "Steam Input", "achievements"]
+      console:
+        pairs_with: ["platform SDK (NDA)", "certification requirements", "platform-specific APIs"]
+      mobile_ios:
+        pairs_with: ["App Store", "Metal", "Game Center", "StoreKit"]
+      mobile_android:
+        pairs_with: ["Google Play", "Vulkan/OpenGL ES", "Google Play Games Services"]
+      web_html5:
+        pairs_with: ["WebGL", "WebAssembly", "itch.io", "Newgrounds"]
+      vr_headset:
+        pairs_with: ["OpenXR", "Meta SDK", "SteamVR", "platform store"]
 
-# Opinionated stack combinations (BMM methodology)
+# Opinionated stack combinations for common game types
 common_stacks:
-  modern_fullstack:
-    name: "Modern Full-Stack"
-    components: ["Next.js", "PostgreSQL or Supabase", "Prisma ORM", "NextAuth.js", "Tailwind CSS", "TypeScript", "Vercel"]
-    good_for: "Most web applications"
+  unity_3d_action:
+    name: "Unity 3D Action/Adventure"
+    components: ["Unity", "URP", "C#", "Cinemachine", "Unity Input System", "FMOD or native audio", "Addressables"]
+    good_for: "3D action games, third-person, first-person, adventure"
 
-  enterprise_stack:
-    name: "Enterprise Stack"
-    components: ["NestJS", "PostgreSQL", "TypeORM", "Auth0", "Redis", "Docker", "AWS"]
-    good_for: "Large-scale enterprise applications"
+  unity_2d_platformer:
+    name: "Unity 2D Platformer"
+    components: ["Unity", "URP 2D Renderer", "C#", "Tilemap", "Unity Input System", "custom character controller"]
+    good_for: "2D platformers, metroidvanias, side-scrollers"
 
-  rapid_prototype:
-    name: "Rapid Prototype"
-    components: ["Next.js", "Supabase", "shadcn/ui", "Vercel"]
-    good_for: "MVP and rapid development"
+  unreal_high_fidelity:
+    name: "Unreal High-Fidelity 3D"
+    components: ["Unreal Engine", "Nanite", "Lumen", "C++ and Blueprints", "Enhanced Input", "MetaSounds"]
+    good_for: "AAA-quality 3D, open world, realistic visuals"
 
-  real_time_app:
-    name: "Real-Time Application"
-    components: ["Next.js", "Supabase Realtime", "PostgreSQL", "Prisma", "Socket.io fallback"]
-    good_for: "Chat, collaboration, live updates"
+  unreal_multiplayer:
+    name: "Unreal Multiplayer"
+    components: ["Unreal Engine", "Replication", "Dedicated Servers", "Enhanced Input", "EOS"]
+    good_for: "Competitive multiplayer, team shooters, battle royale"
 
-  mobile_app:
-    name: "Mobile Application"
-    components: ["Expo", "React Native", "Supabase or Firebase", "React Query"]
-    good_for: "Cross-platform mobile apps"
+  godot_2d:
+    name: "Godot 2D"
+    components: ["Godot", "GDScript", "TileMap", "AnimationPlayer", "Godot Physics 2D"]
+    good_for: "2D games, pixel art, indie, rapid prototyping, web export"
 
-# Starter templates and what decisions they make
+  godot_3d:
+    name: "Godot 3D"
+    components: ["Godot", "GDScript or C#", "Forward+ renderer", "NavigationServer", "Jolt Physics"]
+    good_for: "Mid-scope 3D games, open source priority, multi-platform"
+
+  web_browser_game:
+    name: "Browser/HTML5 Game"
+    components: ["Phaser or Godot HTML5", "JavaScript/TypeScript", "WebGL", "Howler.js for audio"]
+    good_for: "Web games, game jams, itch.io, casual browser games"
+
+  mobile_casual:
+    name: "Mobile Casual"
+    components: ["Unity or Godot", "lightweight renderer", "touch input", "ad SDK", "IAP SDK", "cloud save"]
+    good_for: "Mobile F2P, hyper-casual, idle games"
+
+  vr_experience:
+    name: "VR Game"
+    components: ["Unity XR Toolkit or Unreal OpenXR", "OpenXR", "spatial audio", "hand tracking", "fixed foveated rendering"]
+    good_for: "VR games, XR experiences, room-scale interaction"
+
+# Starter templates and what decisions they pre-make
 starter_templates:
-  create_next_app:
-    name: "Create Next App"
-    command_search: "npx create-next-app@latest"
-    decisions_provided: ["Next.js framework", "TypeScript option", "App Router vs Pages", "Tailwind CSS option", "ESLint"]
-    good_for: ["React web applications", "Full-stack apps", "SSR/SSG"]
+  unity_2d_urp:
+    name: "Unity 2D (URP)"
+    command_search: "Unity Hub → New Project → 2D (URP)"
+    decisions_provided: ["Unity engine", "URP rendering", "2D Renderer", "C# language", "basic project structure"]
+    good_for: ["2D games", "pixel art", "platformers", "top-down"]
 
-  create_t3_app:
-    name: "Create T3 App"
-    command_search: "npm create t3-app@latest"
-    decisions_provided: ["Next.js", "TypeScript", "tRPC", "Prisma", "NextAuth", "Tailwind CSS"]
-    good_for: ["Type-safe full-stack apps"]
+  unity_3d_urp:
+    name: "Unity 3D (URP)"
+    command_search: "Unity Hub → New Project → 3D (URP)"
+    decisions_provided: ["Unity engine", "URP rendering", "3D pipeline", "C# language", "basic project structure"]
+    good_for: ["3D games", "mobile 3D", "stylized visuals", "cross-platform"]
 
-  create_vite:
-    name: "Create Vite"
-    command_search: "npm create vite@latest"
-    decisions_provided: ["Framework choice (React/Vue/Svelte)", "TypeScript option", "Vite bundler"]
-    good_for: ["Fast dev SPAs", "Library development"]
+  unity_3d_hdrp:
+    name: "Unity 3D (HDRP)"
+    command_search: "Unity Hub → New Project → 3D (HDRP)"
+    decisions_provided: ["Unity engine", "HDRP rendering", "high-end pipeline", "C# language"]
+    good_for: ["High-fidelity 3D", "PC/console", "realistic rendering"]
 
-  create_remix:
-    name: "Create Remix"
-    command_search: "npx create-remix@latest"
-    decisions_provided: ["Remix framework", "TypeScript option", "Deployment target", "CSS solution"]
-    good_for: ["Web standards", "Nested routing", "Progressive enhancement"]
+  unity_vr:
+    name: "Unity VR"
+    command_search: "Unity Hub → New Project → VR"
+    decisions_provided: ["Unity engine", "XR Plugin Management", "XR Interaction Toolkit", "URP"]
+    good_for: ["VR games", "XR experiences"]
 
-  nest_new:
-    name: "NestJS CLI"
-    command_search: "nest new project"
-    decisions_provided: ["TypeScript (always)", "Package manager", "Testing framework (Jest)", "Project structure"]
-    good_for: ["Enterprise APIs", "Microservices", "GraphQL APIs"]
+  unreal_blank:
+    name: "Unreal Blank Project"
+    command_search: "Epic Games Launcher → Unreal → Blank"
+    decisions_provided: ["Unreal engine", "C++ and Blueprints", "Chaos physics", "MetaSounds"]
+    good_for: ["Custom game types", "full control over setup"]
 
-  create_expo_app:
-    name: "Create Expo App"
-    command_search: "npx create-expo-app"
-    decisions_provided: ["React Native", "Expo SDK", "TypeScript option", "Navigation option"]
-    good_for: ["Cross-platform mobile", "React Native apps"]
+  unreal_third_person:
+    name: "Unreal Third Person"
+    command_search: "Epic Games Launcher → Unreal → Third Person"
+    decisions_provided: ["Unreal engine", "character movement", "Enhanced Input", "third-person camera", "mannequin animations"]
+    good_for: ["3D action/adventure", "third-person games"]
+
+  unreal_first_person:
+    name: "Unreal First Person"
+    command_search: "Epic Games Launcher → Unreal → First Person"
+    decisions_provided: ["Unreal engine", "FPS movement", "Enhanced Input", "first-person camera", "projectile system"]
+    good_for: ["FPS games", "first-person exploration"]
+
+  godot_default:
+    name: "Godot Default Project"
+    command_search: "Godot → Project Manager → New Project"
+    decisions_provided: ["Godot engine", "GDScript", "scene tree architecture", "2D and 3D capable"]
+    good_for: ["Any Godot game", "rapid prototyping", "2D or 3D"]
+
+  phaser_vite:
+    name: "Phaser + Vite"
+    command_search: "npm create @phaserjs/game@latest"
+    decisions_provided: ["Phaser framework", "TypeScript option", "Vite bundler", "Arcade Physics"]
+    good_for: ["Browser games", "2D web games", "game jams"]
+
+  bevy_default:
+    name: "Bevy Default"
+    command_search: "cargo init && cargo add bevy"
+    decisions_provided: ["Bevy engine", "Rust language", "ECS architecture", "wgpu renderer"]
+    good_for: ["Rust game development", "data-oriented design", "custom pipelines"]
 
 # Starter selection heuristics (workflow logic)
 starter_selection_rules:
-  by_project_type:
-    web_application:
-      recommended: ["create_next_app", "create_t3_app", "create_vite"]
-      considerations: "SSR needs? → Next.js. Type safety critical? → T3. SPA only? → Vite"
+  by_game_type:
+    2d_platformer:
+      recommended: ["unity_2d_urp", "godot_default"]
+      considerations: "Asset store needs? → Unity. Open source? → Godot. Web export? → Godot or Phaser"
 
-    mobile_app:
-      recommended: ["create_expo_app"]
-      considerations: "Cross-platform → Expo. Native-heavy → React Native CLI"
+    3d_action:
+      recommended: ["unreal_third_person", "unity_3d_urp"]
+      considerations: "High fidelity? → Unreal. Cross-platform mobile? → Unity URP. Stylized? → Either"
 
-    api_backend:
-      recommended: ["nest_new"]
-      considerations: "Enterprise → NestJS. Simple → Express starter. Performance → Fastify"
+    fps_shooter:
+      recommended: ["unreal_first_person", "unity_3d_urp"]
+      considerations: "Multiplayer replication? → Unreal. Mobile? → Unity. Competitive netcode? → Both viable"
 
-    full_stack:
-      recommended: ["create_t3_app", "create_remix"]
-      considerations: "Type safety → T3. Web standards → Remix. Monolith → RedwoodJS"
+    open_world:
+      recommended: ["unreal_blank", "unity_3d_urp"]
+      considerations: "Large-scale streaming? → Unreal (World Partition). Mid-scope? → Unity or Godot"
+
+    mobile_casual:
+      recommended: ["unity_2d_urp", "godot_default"]
+      considerations: "Ad/IAP SDKs? → Unity (best ecosystem). Open source? → Godot. Web-first? → Phaser"
+
+    vr_game:
+      recommended: ["unity_vr", "unreal_blank"]
+      considerations: "XR Toolkit maturity? → Unity. Visual fidelity? → Unreal. Cross-headset? → Both via OpenXR"
+
+    browser_game:
+      recommended: ["phaser_vite", "godot_default"]
+      considerations: "Pure web? → Phaser. May expand to desktop? → Godot. Game jam? → Either"
+
+    strategy_rts:
+      recommended: ["unity_3d_urp", "godot_default", "unreal_blank"]
+      considerations: "Large unit counts? → ECS approach in any engine. Mod support? → Godot. Polish? → Unity or Unreal"
+
+    narrative_rpg:
+      recommended: ["unity_3d_urp", "unity_2d_urp", "godot_default"]
+      considerations: "Yarn Spinner/Ink integration? → Unity or Godot. Dialogue-heavy? → Godot (built-in). AAA RPG? → Unreal"

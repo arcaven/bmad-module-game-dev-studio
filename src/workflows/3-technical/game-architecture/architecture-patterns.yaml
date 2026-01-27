@@ -1,321 +1,507 @@
-# Architecture Patterns - Common patterns identified from requirements
+# Architecture Patterns - Common patterns identified from game design requirements
+# Used during Step 4 (decisions) to match GDD keywords to architectural needs
+#
+# ⚠️ CRITICAL: All version/feature info MUST be verified via WebSearch during workflow
+# This file only provides: triggers, relationships, and pattern identification logic
 
 requirement_patterns:
-  realtime_collaboration:
+  realtime_multiplayer:
     triggers:
-      - "real-time"
-      - "collaborative"
-      - "live updates"
-      - "multi-user"
-      - "simultaneous editing"
+      - "real-time multiplayer"
+      - "online multiplayer"
+      - "networked gameplay"
+      - "PvP"
+      - "co-op"
+      - "competitive"
+      - "synchronous multiplayer"
     decisions_needed:
-      - websocket_solution
-      - conflict_resolution
+      - networking_model
+      - netcode_solution
+      - server_authority
       - state_synchronization
-      - presence_tracking
-      - optimistic_updates
+      - lag_compensation
+      - matchmaking
     suggested_stack:
-      - "Socket.io or WebSocket native"
-      - "Redis for pub/sub"
-      - "Operational Transforms or CRDTs for conflict resolution"
-      - "PostgreSQL for persistence"
+      - "Dedicated servers or relay for authoritative gameplay"
+      - "Client-side prediction with server reconciliation"
+      - "UDP-based transport (ENet, LiteNetLib, or engine-native)"
+      - "Matchmaking service (engine-native, PlayFab, or custom)"
 
-  ecommerce:
+  turn_based_multiplayer:
     triggers:
-      - "shopping cart"
-      - "checkout"
-      - "payments"
+      - "turn-based"
+      - "asynchronous multiplayer"
+      - "hotseat"
+      - "play-by-mail"
+      - "card game"
+      - "board game"
+    decisions_needed:
+      - session_persistence
+      - turn_validation
+      - game_state_storage
+      - player_notification
+      - reconnection_handling
+    suggested_stack:
+      - "REST or WebSocket API for turn submission"
+      - "Server-side turn validation and state management"
+      - "Database-backed game state (SQLite, PostgreSQL, or cloud)"
+      - "Push notifications for turn alerts"
+
+  physics_simulation:
+    triggers:
+      - "physics"
+      - "rigid body"
+      - "collision"
+      - "ragdoll"
+      - "destruction"
+      - "vehicle simulation"
+      - "fluid simulation"
+    decisions_needed:
+      - physics_engine
+      - simulation_fidelity
+      - determinism_requirements
+      - collision_layer_strategy
+      - physics_tick_rate
+    suggested_stack:
+      - "Engine-native physics (PhysX, Jolt, Godot Physics)"
+      - "Fixed timestep simulation decoupled from rendering"
+      - "Collision layer matrix for performance"
+      - "Physics materials system for surface interactions"
+
+  procedural_generation:
+    triggers:
+      - "procedural"
+      - "randomly generated"
+      - "roguelike"
+      - "roguelite"
+      - "infinite terrain"
+      - "wave function collapse"
+      - "dungeon generation"
+      - "world generation"
+    decisions_needed:
+      - generation_algorithm
+      - seed_management
+      - chunk_streaming
+      - content_validation
+      - generation_pipeline
+    suggested_stack:
+      - "Seeded PRNG for reproducibility"
+      - "Chunk-based or room-based generation depending on scope"
+      - "Constraint-based validation passes"
+      - "Async generation with loading strategies"
+
+  rpg_systems:
+    triggers:
+      - "RPG"
+      - "character stats"
       - "inventory"
-      - "product catalog"
+      - "skill tree"
+      - "leveling"
+      - "experience points"
+      - "equipment"
+      - "loot"
+      - "crafting"
     decisions_needed:
-      - payment_processor
-      - cart_persistence
-      - inventory_management
-      - order_workflow
-      - tax_calculation
+      - stat_system_design
+      - inventory_architecture
+      - progression_model
+      - save_data_schema
+      - effect_and_buff_system
     suggested_stack:
-      - "Stripe or PayPal for payments"
-      - "PostgreSQL for products and orders"
-      - "Redis for cart sessions"
-      - "BullMQ for order processing"
+      - "Data-driven stat and item definitions (JSON, YAML, or ScriptableObjects)"
+      - "Component or ECS-based character system"
+      - "Serializable save system with versioning"
+      - "Observer pattern for stat change propagation"
 
-  saas_platform:
+  platformer_mechanics:
     triggers:
-      - "multi-tenant"
-      - "subscription"
-      - "billing"
-      - "team management"
-      - "roles and permissions"
+      - "platformer"
+      - "2D physics"
+      - "jumping"
+      - "side-scrolling"
+      - "metroidvania"
+      - "precision movement"
     decisions_needed:
-      - tenancy_model
-      - subscription_billing
-      - permission_system
-      - team_collaboration
-      - usage_tracking
+      - character_controller_type
+      - camera_system
+      - level_design_tools
+      - animation_system
+      - input_buffering
     suggested_stack:
-      - "PostgreSQL with Row Level Security"
-      - "Stripe Billing for subscriptions"
-      - "RBAC or ABAC for permissions"
-      - "NextAuth or Clerk for auth"
+      - "Custom character controller (not physics-driven rigidbody)"
+      - "Coyote time and input buffering for feel"
+      - "Tilemap or modular level construction"
+      - "State machine for character states"
 
-  content_platform:
+  strategy_rts:
     triggers:
-      - "CMS"
-      - "blog"
-      - "publishing"
-      - "content management"
-      - "editorial workflow"
+      - "strategy"
+      - "RTS"
+      - "4X"
+      - "base building"
+      - "unit management"
+      - "resource management"
+      - "fog of war"
+      - "tower defense"
     decisions_needed:
-      - content_storage
-      - rich_text_editor
-      - media_handling
-      - version_control
-      - publishing_workflow
+      - pathfinding_solution
+      - unit_selection_system
+      - ai_architecture
+      - fog_of_war_approach
+      - resource_economy_model
     suggested_stack:
-      - "PostgreSQL for structured content"
-      - "S3 or Cloudinary for media"
-      - "Tiptap or Slate for rich text"
-      - "Algolia for search"
+      - "A* or flow field pathfinding depending on unit count"
+      - "Spatial partitioning for unit queries (quadtree, spatial hash)"
+      - "Command pattern for unit orders"
+      - "ECS or data-oriented design for large unit counts"
 
-  data_analytics:
+  puzzle_mechanics:
     triggers:
-      - "dashboards"
-      - "reporting"
-      - "metrics"
-      - "analytics"
-      - "data visualization"
+      - "puzzle"
+      - "logic game"
+      - "match-3"
+      - "word game"
+      - "brain teaser"
+      - "sokoban"
     decisions_needed:
-      - data_warehouse
-      - etl_pipeline
-      - visualization_library
-      - query_optimization
-      - caching_strategy
+      - puzzle_state_representation
+      - undo_redo_system
+      - hint_system
+      - difficulty_progression
+      - solution_validation
     suggested_stack:
-      - "PostgreSQL or ClickHouse"
-      - "Apache Airflow or Temporal for ETL"
-      - "Chart.js or D3 for visualization"
-      - "Redis for query caching"
+      - "Immutable state snapshots for undo/redo"
+      - "Rule engine for move validation"
+      - "Data-driven puzzle definitions"
+      - "Analytics-informed difficulty tuning"
 
-  social_platform:
+  open_world:
     triggers:
-      - "social network"
-      - "feed"
-      - "following"
-      - "likes"
-      - "comments"
+      - "open world"
+      - "sandbox"
+      - "seamless world"
+      - "large map"
+      - "exploration"
+      - "survival"
+      - "crafting"
     decisions_needed:
-      - graph_relationships
-      - feed_algorithm
-      - notification_system
-      - content_moderation
-      - privacy_controls
+      - world_streaming
+      - lod_strategy
+      - persistence_model
+      - ai_budget_management
+      - day_night_cycle
     suggested_stack:
-      - "PostgreSQL with graph extensions or Neo4j"
-      - "Redis for feed caching"
-      - "Elasticsearch for user search"
-      - "WebSockets for notifications"
+      - "Chunk-based world streaming with async loading"
+      - "Multi-level LOD for terrain, objects, and AI"
+      - "Zone-based save system with dirty tracking"
+      - "Spatial partitioning for active entity management"
 
-  marketplace:
+  narrative_driven:
     triggers:
-      - "marketplace"
-      - "vendors"
-      - "buyers and sellers"
-      - "transactions"
-      - "escrow"
+      - "story"
+      - "dialogue"
+      - "branching narrative"
+      - "visual novel"
+      - "quest system"
+      - "cutscenes"
+      - "choices matter"
     decisions_needed:
-      - payment_splitting
-      - escrow_handling
-      - vendor_management
-      - dispute_resolution
-      - commission_model
+      - dialogue_system
+      - narrative_scripting_tool
+      - quest_tracking
+      - branching_logic
+      - localization_pipeline
     suggested_stack:
-      - "Stripe Connect for payments"
-      - "PostgreSQL for transactions"
-      - "BullMQ for async processing"
-      - "S3 for vendor assets"
+      - "Dialogue graph tool (Yarn Spinner, Ink, or custom)"
+      - "Event-driven quest state machine"
+      - "Flag/variable system for world state tracking"
+      - "Localization table with string keys"
 
-  streaming_platform:
+  mobile_casual:
     triggers:
-      - "video streaming"
-      - "live streaming"
-      - "media delivery"
-      - "broadcast"
+      - "mobile"
+      - "casual"
+      - "free-to-play"
+      - "F2P"
+      - "hyper-casual"
+      - "idle game"
+      - "touch controls"
     decisions_needed:
-      - video_encoding
-      - cdn_strategy
-      - streaming_protocol
-      - bandwidth_optimization
-      - drm_protection
+      - monetization_model
+      - session_design
+      - save_and_sync
+      - performance_budget
+      - input_abstraction
     suggested_stack:
-      - "AWS MediaConvert or Mux"
-      - "CloudFront or Fastly CDN"
-      - "HLS or DASH protocol"
-      - "S3 for video storage"
+      - "Lightweight engine or framework (Unity Mobile, Godot, or custom)"
+      - "Cloud save with offline-first design"
+      - "Ad mediation SDK and IAP integration"
+      - "Aggressive memory and draw call budgeting"
 
-  iot_platform:
+  vr_xr:
     triggers:
-      - "IoT"
-      - "sensors"
-      - "device management"
-      - "telemetry"
-      - "edge computing"
+      - "VR"
+      - "virtual reality"
+      - "AR"
+      - "augmented reality"
+      - "XR"
+      - "mixed reality"
+      - "motion controls"
+      - "room-scale"
     decisions_needed:
-      - message_protocol
-      - time_series_database
-      - device_authentication
-      - data_ingestion
-      - edge_processing
+      - xr_runtime
+      - interaction_system
+      - locomotion_method
+      - comfort_settings
+      - performance_target
     suggested_stack:
-      - "MQTT or CoAP protocol"
-      - "TimescaleDB or InfluxDB"
-      - "Apache Kafka for ingestion"
-      - "Grafana for monitoring"
+      - "OpenXR for cross-platform headset support"
+      - "Engine XR toolkit (XR Interaction Toolkit, XR Tools)"
+      - "Fixed foveated rendering and LOD for performance"
+      - "Comfort options (vignette, snap turn, teleport)"
 
-  ai_application:
+  fighting_action:
     triggers:
-      - "machine learning"
-      - "AI features"
-      - "LLM integration"
-      - "computer vision"
-      - "NLP"
+      - "fighting game"
+      - "action combat"
+      - "combo system"
+      - "hitbox"
+      - "frame data"
+      - "hack and slash"
+      - "beat-em-up"
     decisions_needed:
-      - model_serving
-      - vector_database
-      - prompt_management
-      - token_optimization
-      - fallback_strategy
+      - combat_system_architecture
+      - hitbox_hurtbox_system
+      - animation_canceling
+      - frame_data_model
+      - input_handling
     suggested_stack:
-      - "OpenAI or Anthropic API"
-      - "Pinecone or pgvector for embeddings"
-      - "Redis for prompt caching"
-      - "Langchain or LlamaIndex"
+      - "Frame-based combat state machine"
+      - "Data-driven hitbox/hurtbox definitions"
+      - "Input buffer with command parsing"
+      - "Deterministic simulation for rollback netcode"
+
+  racing_vehicle:
+    triggers:
+      - "racing"
+      - "driving"
+      - "vehicle physics"
+      - "kart"
+      - "flight sim"
+      - "space sim"
+    decisions_needed:
+      - vehicle_physics_model
+      - track_design_tools
+      - camera_system
+      - ai_racing_line
+      - replay_system
+    suggested_stack:
+      - "Custom vehicle physics or engine-provided vehicle controller"
+      - "Spline-based track and AI path definition"
+      - "Ghost replay via input or transform recording"
+      - "Multiple camera modes (chase, cockpit, replay)"
 
 # Quality attribute patterns
 quality_attributes:
-  high_availability:
+  high_framerate:
     triggers:
-      - "99.9% uptime"
-      - "high availability"
-      - "fault tolerance"
-      - "disaster recovery"
-    architectural_needs:
-      - load_balancing
-      - database_replication
-      - health_checks
-      - circuit_breakers
-      - graceful_degradation
-
-  high_performance:
-    triggers:
-      - "millisecond response"
-      - "high throughput"
+      - "60 FPS"
+      - "120 FPS"
       - "low latency"
       - "performance critical"
+      - "competitive"
+      - "VR"
     architectural_needs:
-      - caching_layers
-      - database_optimization
-      - cdn_strategy
-      - code_splitting
-      - lazy_loading
+      - frame_budget_allocation
+      - profiling_pipeline
+      - object_pooling
+      - batching_strategy
+      - gc_pressure_management
 
-  high_security:
+  cross_platform:
     triggers:
-      - "compliance"
-      - "HIPAA"
-      - "GDPR"
-      - "financial data"
-      - "PCI DSS"
+      - "cross-platform"
+      - "PC and console"
+      - "mobile and desktop"
+      - "multi-platform"
+      - "Nintendo Switch"
+      - "Steam Deck"
     architectural_needs:
-      - encryption_at_rest
-      - encryption_in_transit
-      - audit_logging
-      - access_controls
-      - data_isolation
+      - input_abstraction_layer
+      - resolution_scaling
+      - platform_capability_detection
+      - build_pipeline_per_platform
+      - platform_specific_apis
 
-  scalability:
+  scalable_multiplayer:
     triggers:
-      - "millions of users"
-      - "elastic scale"
-      - "global reach"
-      - "viral growth"
+      - "MMO"
+      - "hundreds of players"
+      - "massively multiplayer"
+      - "persistent world"
+      - "server scaling"
     architectural_needs:
-      - horizontal_scaling
+      - server_fleet_management
+      - interest_management
       - database_sharding
-      - microservices
-      - queue_systems
-      - auto_scaling
+      - zone_instancing
+      - load_balancing
 
-# Integration patterns
+  mod_support:
+    triggers:
+      - "modding"
+      - "user-generated content"
+      - "UGC"
+      - "mod support"
+      - "workshop"
+      - "custom content"
+    architectural_needs:
+      - data_driven_architecture
+      - asset_loading_abstraction
+      - scripting_api
+      - sandboxed_execution
+      - content_validation
+
+  accessibility:
+    triggers:
+      - "accessibility"
+      - "colorblind"
+      - "subtitles"
+      - "remappable controls"
+      - "difficulty options"
+      - "assist mode"
+    architectural_needs:
+      - input_remapping_system
+      - text_scaling_and_narration
+      - color_palette_alternatives
+      - difficulty_modifier_system
+      - settings_persistence
+
+# Game service integration patterns
 integration_requirements:
-  payment_processing:
+  player_services:
     common_choices:
-      - "Stripe - most developer friendly"
-      - "PayPal - widest consumer adoption"
-      - "Square - best for in-person + online"
+      - "Steam API - PC standard (achievements, leaderboards, matchmaking)"
+      - "PlayFab - cross-platform backend services"
+      - "Epic Online Services - free cross-platform (auth, lobbies, voice)"
+      - "GameSparks or AccelByte - full-featured game backend"
+      - "Engine-native (Unity Gaming Services, Unreal Online Subsystem)"
     considerations:
-      - transaction_fees
-      - international_support
-      - subscription_handling
-      - marketplace_capabilities
+      - platform_requirements
+      - cross_platform_needs
+      - cost_at_scale
+      - feature_completeness
 
-  email_service:
+  monetization:
     common_choices:
-      - "Resend - modern, developer friendly"
-      - "SendGrid - mature, scalable"
-      - "Amazon SES - cost effective at scale"
-      - "Postmark - transactional focus"
+      - "Steam IAP - PC purchases and DLC"
+      - "Platform stores - console-mandated (PSN, Xbox, Nintendo)"
+      - "Unity IAP or Godot IAP plugins - mobile"
+      - "Custom storefront - web-based games"
     considerations:
-      - deliverability
-      - template_management
-      - analytics_needs
-      - cost_per_email
+      - platform_revenue_share
+      - regional_pricing
+      - refund_policies
+      - receipt_validation
 
-  sms_notifications:
+  analytics_telemetry:
     common_choices:
-      - "Twilio - most comprehensive"
-      - "Amazon SNS - AWS integrated"
-      - "Vonage - competitive pricing"
+      - "Unity Analytics or Unreal Insights - engine-native"
+      - "GameAnalytics - free tier, game-focused"
+      - "Amplitude or Mixpanel - product analytics"
+      - "Custom telemetry with time-series database"
     considerations:
-      - international_coverage
-      - delivery_rates
-      - two_way_messaging
-      - cost_per_message
+      - privacy_compliance
+      - data_granularity
+      - real_time_vs_batch
+      - cost_per_event
 
-  authentication_providers:
-    social_providers:
-      - "Google - highest adoption"
-      - "GitHub - developer focused"
-      - "Microsoft - enterprise"
-      - "Apple - iOS users"
-    enterprise_providers:
-      - "SAML 2.0"
-      - "OAuth 2.0"
-      - "OpenID Connect"
-      - "Active Directory"
+  voice_chat:
+    common_choices:
+      - "Vivox - industry standard (Unity/Unreal integration)"
+      - "Discord SDK - community-focused"
+      - "Photon Voice - Photon ecosystem"
+      - "Epic Online Services voice"
+    considerations:
+      - platform_compatibility
+      - spatial_audio_support
+      - moderation_tools
+      - bandwidth_overhead
+
+  cloud_saves:
+    common_choices:
+      - "Steam Cloud - PC standard"
+      - "Platform cloud (PSN, Xbox, iCloud)"
+      - "PlayFab or custom backend - cross-platform"
+      - "Engine services (Unity Cloud Save)"
+    considerations:
+      - conflict_resolution
+      - save_size_limits
+      - offline_support
+      - migration_between_versions
+
+  anti_cheat:
+    common_choices:
+      - "Easy Anti-Cheat - widely adopted, free for some engines"
+      - "BattlEye - AAA standard"
+      - "Custom server authority - indie/small scale"
+      - "VAC - Steam-integrated"
+    considerations:
+      - server_authority_level
+      - client_trust_model
+      - performance_impact
+      - platform_support
 
 # Decision heuristics
 decision_rules:
-  database_selection:
+  engine_selection:
     if_requirements_include:
-      - complex_relationships: "PostgreSQL"
-      - flexible_schema: "MongoDB"
-      - time_series: "TimescaleDB"
-      - graph_data: "Neo4j or PostgreSQL with extensions"
-      - key_value: "Redis"
-      - wide_column: "Cassandra"
+      - 3d_high_fidelity: "Unreal Engine"
+      - 2d_focused: "Godot or Unity"
+      - cross_platform_mobile: "Unity or Godot"
+      - open_source_priority: "Godot"
+      - aaa_pipeline: "Unreal Engine"
+      - rapid_prototype: "Godot"
+      - web_browser_target: "Godot (HTML5), Phaser, or PlayCanvas"
+      - vr_xr: "Unity (XR Toolkit) or Unreal (OpenXR)"
 
-  api_pattern_selection:
+  networking_model:
     if_requirements_include:
-      - simple_crud: "REST"
-      - complex_queries: "GraphQL"
-      - type_safety_critical: "tRPC"
-      - microservices: "gRPC"
-      - public_api: "REST with OpenAPI"
+      - competitive_pvp: "Dedicated servers with rollback or server reconciliation"
+      - cooperative_pve: "Host-migration capable peer-to-peer or listen servers"
+      - turn_based: "Client-server REST/WebSocket with authoritative state"
+      - mmo_scale: "Dedicated server fleet with spatial partitioning"
+      - local_multiplayer: "Shared-screen input splitting (no networking)"
 
-  deployment_selection:
+  physics_solution:
     if_requirements_include:
-      - nextjs_only: "Vercel"
-      - complex_infrastructure: "AWS"
-      - quick_prototype: "Railway"
-      - global_edge: "Fly.io"
-      - kubernetes_needed: "GCP or AWS EKS"
+      - standard_3d: "Engine-native physics (PhysX, Jolt, Godot 3D)"
+      - deterministic_required: "Custom fixed-point or deterministic physics library"
+      - 2d_platformer: "Custom character controller with raycasts"
+      - vehicle_sim: "Specialized vehicle physics (engine-provided or custom)"
+      - destruction: "Engine destructibles or Chaos (Unreal) / custom solution"
+
+  audio_solution:
+    if_requirements_include:
+      - simple_sfx: "Engine-native audio system"
+      - adaptive_music: "FMOD or Wwise middleware"
+      - spatial_3d_audio: "Engine spatial audio or middleware (Wwise Spatial)"
+      - large_sound_library: "FMOD or Wwise for memory management and streaming"
+      - procedural_audio: "Custom DSP or middleware with scripting"
+
+  ai_approach:
+    if_requirements_include:
+      - simple_enemies: "Finite state machines"
+      - complex_behaviors: "Behavior trees"
+      - emergent_ai: "Utility AI or GOAP (Goal-Oriented Action Planning)"
+      - large_scale_rts: "Hierarchical AI with strategic and tactical layers"
+      - companion_npcs: "Behavior trees with context awareness"
+      - open_world_npcs: "Scheduler-based AI with daily routines"
+
+  save_system:
+    if_requirements_include:
+      - simple_progress: "Key-value storage (PlayerPrefs, config files)"
+      - complex_world_state: "Serialized scene graph with versioned schema"
+      - cloud_sync: "Platform cloud saves with local fallback"
+      - roguelike_runs: "Run state snapshot with permadeath logic"
+      - sandbox_world: "Chunk-based world serialization"

@@ -11,6 +11,9 @@ nextStepFile: './step-04-decisions.md'
 workflowFile: '{workflow_path}/workflow.md'
 outputFile: '{output_folder}/game-architecture.md'
 
+# Knowledge Base References
+engineMcps: '{workflow_path}/engine-mcps.yaml'
+
 # Task References
 advancedElicitationTask: '{project-root}/_bmad/core/workflows/advanced-elicitation/workflow.xml'
 partyModeWorkflow: '{project-root}/_bmad/core/workflows/party-mode/workflow.md'
@@ -183,7 +186,62 @@ Search web: "{{engine}} starter template {{game_type}} {{current_year}}"
 
 Would you like to use a starter template, or start from scratch?"
 
-### 6. Generate Engine Section
+### 6. Recommend Game Engine MCPs
+
+**Load MCP knowledge base:** `{engineMcps}`
+
+**Look up MCPs for the selected engine ({{selected_engine}}):**
+
+Search web: "{{selected_engine}} MCP server Model Context Protocol {{current_year}}"
+
+**Verify the repos listed in the knowledge base are still active and maintained.** The MCP ecosystem moves fast - confirm star counts, recent commits, and compatibility with the user's engine version before recommending.
+
+**If multiple MCPs exist for the engine, present the default recommendation first** (per `recommendation_rules.multiple_options` in the knowledge base), then mention alternatives. Include:
+- Repo name and link
+- Key capabilities (3-5 bullet points)
+- Requirements (engine version, Node.js, Python, etc.)
+- Install type
+
+**Present based on skill level:**
+
+For **expert** users:
+
+"**Available MCPs for {{selected_engine}}:**
+
+| MCP | Repo | Install | Requirements |
+| --- | ---- | ------- | ------------ |
+| {{mcp_name}} | {{repo}} | {{install_type}} | {{requirements}} |
+
+Key capabilities: {{capability_summary}}
+
+Include MCP setup in your architecture? [y/n]"
+
+For **beginner** users:
+
+"**AI Development Tools**
+
+There's a way to give your AI assistant direct access to {{selected_engine}} - called MCP (Model Context Protocol) servers. Think of it like giving your AI a window into the game editor.
+
+For {{selected_engine}}, I'd recommend **{{mcp_name}}** which lets the AI:
+{{friendly_capability_list}}
+
+This means the AI can inspect your scenes and assets directly instead of relying on descriptions. It's optional but highly recommended for AI-assisted development.
+
+Include MCP setup in your architecture? [y/n]"
+
+**Also recommend Context7** (upstash/context7): Lets the AI look up current {{selected_engine}} documentation instead of relying on training data. Works with any engine.
+
+**If user accepts MCPs:**
+
+Record selected MCPs for inclusion in Development Environment section:
+- MCP name, repo, install steps, requirements
+- These will be included in the final architecture document
+
+**If user declines:**
+
+"No problem - you can always add MCPs later. Let's continue with the architecture."
+
+### 7. Generate Engine Section
 
 Based on the conversation, prepare the content:
 
@@ -222,7 +280,7 @@ The following decisions must be made explicitly:
 
 ```
 
-### 7. Present Content and Menu
+### 8. Present Content and Menu
 
 Show the generated content to the user and present:
 
@@ -230,7 +288,7 @@ Show the generated content to the user and present:
 
 **Here's what I'll add to the document:**
 
-[Show the complete markdown content from step 6]
+[Show the complete markdown content from step 7]
 
 **Validation Check:**
 - Is the engine version current?
@@ -242,7 +300,7 @@ Show the generated content to the user and present:
 [P] Party Mode - Get perspectives on engine choice
 [C] Continue - Save this and move to Architectural Decisions (Step 4 of 9)"
 
-### 8. Handle Menu Selection
+### 9. Handle Menu Selection
 
 #### IF A (Advanced Elicitation):
 - Execute {advancedElicitationTask} with the current content
@@ -276,6 +334,7 @@ ONLY WHEN [C continue option] is selected and [engine content saved with frontma
 - Engine-provided decisions documented
 - Remaining decisions identified
 - Starter template evaluated if applicable
+- Game engine MCPs presented and user preference recorded
 - A/P/C menu presented and handled correctly
 - Frontmatter updated with stepsCompleted: [1, 2, 3]
 

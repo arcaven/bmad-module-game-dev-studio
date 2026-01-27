@@ -214,6 +214,32 @@ Search the web: "{{primary_technology}} boilerplate generator latest options"
   </check>
 
 <template-output>starter_template_decision</template-output>
+
+<action>Load engine MCP knowledge base: {engine_mcps}</action>
+<action>Look up available MCP servers for the selected engine/framework</action>
+<action>Search the web: "{{selected_engine}} MCP server Model Context Protocol" to verify repos are active and maintained</action>
+<action>Verify compatibility with user's engine version before recommending</action>
+
+<check if="engine_mcps_available">
+  <action>Present relevant MCP servers based on {game_dev_experience}:
+    - Engine-specific MCP: present default recommendation first, mention alternatives
+    - Include repo name, capabilities, requirements, and install type
+    - Context7 (upstash/context7): documentation lookup MCP for any engine
+  </action>
+  <ask>Include MCP setup in your architecture? These give AI agents direct access to {{engine}} for scene inspection, asset queries, and context-aware code generation. [y/n]</ask>
+  <check if="user_accepts_mcps">
+    <action>Record selected MCPs (name, repo, install steps, requirements) for Development Environment section</action>
+  </check>
+  <check if="user_declines_mcps">
+    <action>Note: User declined MCPs - can be added later. Continue workflow.</action>
+  </check>
+</check>
+
+<check if="no_engine_mcps_found">
+  <action>Note: No engine-specific MCP found for {{selected_engine}}.
+          Recommend Context7 (upstash/context7) for up-to-date API documentation lookup.</action>
+</check>
+
 </step>
 
 <step n="3" goal="Adapt facilitation style and identify remaining decisions">
@@ -591,7 +617,7 @@ Enforcement: "All agents MUST follow this pattern"
 
 <action>Load template: {architecture_template}</action>
 
-<action>Generate sections: 1. Executive Summary (2-3 sentences about the architecture approach) 2. Project Initialization (starter command if applicable) 3. Decision Summary Table (with verified versions and epic mapping) 4. Complete Project Structure (full tree, no placeholders) 5. Epic to Architecture Mapping (every epic placed) 6. Technology Stack Details (versions, configurations) 7. Integration Points (how components connect) 8. Novel Pattern Designs (if any were created) 9. Implementation Patterns (all consistency rules) 10. Consistency Rules (naming, organization, formats) 11. Data Architecture (models and relationships) 12. API Contracts (request/response formats) 13. Security Architecture (auth, authorization, data protection) 14. Performance Considerations (from NFRs) 15. Deployment Architecture (where and how) 16. Development Environment (setup and prerequisites) 17. Architecture Decision Records (key decisions with rationale)
+<action>Generate sections: 1. Executive Summary (2-3 sentences about the architecture approach) 2. Project Initialization (starter command if applicable) 3. Decision Summary Table (with verified versions and epic mapping) 4. Complete Project Structure (full tree, no placeholders) 5. Epic to Architecture Mapping (every epic placed) 6. Technology Stack Details (versions, configurations) 7. Integration Points (how components connect) 8. Novel Pattern Designs (if any were created) 9. Implementation Patterns (all consistency rules) 10. Consistency Rules (naming, organization, formats) 11. Data Architecture (models and relationships) 12. API Contracts (request/response formats) 13. Security Architecture (auth, authorization, data protection) 14. Performance Considerations (from NFRs) 15. Deployment Architecture (where and how) 16. Development Environment (setup, prerequisites, and AI Tooling/MCP servers if selected) 17. Architecture Decision Records (key decisions with rationale)
 </action>
 
 <action>Fill template with all collected decisions and patterns</action>

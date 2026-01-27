@@ -91,6 +91,23 @@ Based on all documented content, synthesize an executive summary:
 
 {{prerequisites_list}}
 
+### AI Tooling (MCP Servers)
+
+{{if_mcps_selected}}
+The following MCP servers were selected during architecture to enhance AI-assisted development:
+
+| MCP Server | Purpose | Install Type |
+| ---------- | ------- | ------------ |
+{{mcp_table_rows}}
+
+**Setup:**
+{{mcp_setup_instructions}}
+
+These give your AI assistant direct access to {{engine}} for scene inspection, asset queries, and context-aware code generation.
+{{else}}
+No engine-specific MCP servers were selected. You can add them later by searching for "{{engine}} MCP server" to find available integrations.
+{{/if_mcps_selected}}
+
 ### Setup Commands
 
 ```bash
@@ -102,7 +119,8 @@ Based on all documented content, synthesize an executive summary:
 
 1. {{first_step}}
 2. {{second_step}}
-3. {{third_step}}
+3. Configure MCP servers (if selected) per the AI Tooling instructions above
+4. {{third_step}}
 
 ````
 
