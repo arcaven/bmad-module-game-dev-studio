@@ -1,11 +1,20 @@
 # CHANGELOG
 
-## v6.0.2 - Jan 22, 2026
+## v0.1.4 - Jan 27, 2026
+
+* The architecture creation process has been revamped and now has significantly more content relevant to game development. When creating your architecture document, you'll now make decisions on such things as rendering pipelines, physics systems, anti-cheat libraries, dialogue systems, and more. You'll be prompted for common starter templates and useful MCPs that interact with game engines.
+* Fixed bug in multiple workflows that were using BMM's user_skill_level instead of GDS' game_dev_experience.
+
+## v0.1.3 - Jan 26, 2026
+
+* Help system update
+
+## v0.1.2 - Jan 22, 2026
 
 * Workflow init replaced with new help system
 * Changing all references of BMGD to GDS
 
-## v6.0.1 - Jan 21, 2026
+## v0.1.1 - Jan 21, 2026
 
 NOTE: This is in preparation for BMAD's Beta 6 launch. It is a *significant* update and recommended for all BMGD users as it integrates all the new BMAD Beta 6 work done in the past month. Documentation is still incomplete and will come shortly. Thank you for your patience.
 
