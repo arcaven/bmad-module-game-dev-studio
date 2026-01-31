@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "bmad-game-dev-studio",
+  "name": "@bmad/bmad-game-dev-studio",
   "version": "0.1.4",
   "description": "A BMad MEthod Core Module that offers a substantial stand alone module for Game Development across multiple supported platforms",
   "keywords": [
@@ -14,7 +14,6 @@
   "license": "MIT",
   "author": "Brian (BMad) Madison",
   "main": "",
-  "bin": {},
   "scripts": {
     "format:check": "prettier --check \"**/*.{js,cjs,mjs,json,yaml}\"",
     "format:fix": "prettier --write \"**/*.{js,cjs,mjs,json,yaml}\"",
