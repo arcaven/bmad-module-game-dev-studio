@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v0.1.5 - Feb 1, 2026
+
+* Improve module-help.csv descriptions with "Use when..." clauses for better LLM comprehension
+* Update all 26 workflow descriptions with '[Action]. Use [when].' pattern
+* Move Correct Course workflow from anytime to 4-production phase (sequence 55)
+* Remove sequence numbers from all anytime items
+* Change "AI agent" to "chosen agentic tool" for vendor neutrality
+* Properly order anytime items at top before phased workflows
+
 ## v0.1.4 - Jan 27, 2026
 
 * The architecture creation process has been revamped and now has significantly more content relevant to game development. When creating your architecture document, you'll now make decisions on such things as rendering pipelines, physics systems, anti-cheat libraries, dialogue systems, and more. You'll be prompted for common starter templates and useful MCPs that interact with game engines.
