@@ -96,8 +96,10 @@ BMGD: Great choice! Here's what I recommend...
 
 ## Documentation
 
-- [BMad Method Docs](http://docs.bmad-method.org)
-- [BMGD Guide](http://docs.bmad-method.org/bmgd/)
+**[BMad Game Dev Studio Documentation](http://game-dev-studio-docs.bmad-method.org)** — Tutorials, how-to guides, and reference
+
+- [Getting Started](http://game-dev-studio-docs.bmad-method.org/tutorials/)
+- [BMad Method Docs](http://docs.bmad-method.org) — Core framework documentation
 
 ## Community
 
